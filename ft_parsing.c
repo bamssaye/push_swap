@@ -1,54 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_parsing.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/21 06:01:30 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/02/25 14:57:04 by bamssaye         ###   ########.fr       */
+/*   Created: 2024/02/25 14:40:37 by bamssaye          #+#    #+#             */
+/*   Updated: 2024/02/25 14:58:23 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
 #include "./libft/libft.h"
 
-
-
-void ft_freenode(t_stack *head)
-{
-	t_stack *tmp;
-	
-	while (head != NULL)
-	{
-		tmp = head;
-		head = head->next;
-		free (tmp);
-	}
-}
-void ft_add_to_stack(t_stack **head, int value)
-{
-	t_stack *node;
-
-	node = malloc(sizeof(t_stack));
-	
-	node->stack = value;
-	node->next = *head;
-	*head    = node;
-}
-
-void printList(t_stack *node)
-{
-  while (node != NULL)
-  {
-     printf(" %d ", node->stack);
-     node = node->next;
-  }
-}
 static char	**ft_freeargs(char **str)
 {
 	int	i;
@@ -62,24 +26,7 @@ static char	**ft_freeargs(char **str)
 	free(str);
 	return (NULL);
 }
-
-void ft_addtostack(char **str)
-{
-    t_stack *stack;
-    int i;
-
-    i = 0;
-    stack = NULL;
-    while (str[i])
-    {
-        ft_add_to_stack(&stack, ft_atoi(str[i++]));
-    }
-    ft_freeargs(str);
-    printList(stack);
-    ft_freenode(stack);
-    
-}
-int ft_checkduplicat(char **str)
+static int ft_checkduplicat(char **str)
 {
     int i;
     int j;
@@ -96,7 +43,7 @@ int ft_checkduplicat(char **str)
             else
                 len = ft_strlen(str[i]);
             if (!ft_strncmp(str[i], str[j], len))
-                return (ft_freespace(str), 0);
+                return (ft_freeargs(str), 0);
             j++;
         }
         i++;
@@ -105,7 +52,7 @@ int ft_checkduplicat(char **str)
     return (1);
 }
 
-int ft_checkstring(char *str)
+static int ft_checkstring(char *str)
 {
     char **split;
     int i;
@@ -130,6 +77,7 @@ int ft_checkstring(char *str)
         return (0);
     return (1);
 }
+
 int ft_checkarg(char **string)
 {
   
@@ -154,16 +102,4 @@ int ft_checkarg(char **string)
     if (!ft_checkstring(all_stack))
         return (0);
     return (1);
-}
-
-int main(int ac, char **av)
-{
-    int i = 0;
-    if (ac > 1)
-    {
-        if (!ft_checkarg(av))
-            return (printf("Error"), 0);
-        // while (av[1][i])
-        //     write(1,&av[1][i++],1);
-    }
 }
