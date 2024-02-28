@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_sortrules.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 12:18:30 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/02/27 02:24:06 by bamssaye         ###   ########.fr       */
+/*   Created: 2024/02/28 16:17:53 by bamssaye          #+#    #+#             */
+/*   Updated: 2024/02/28 17:16:36 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_atoi(const char *nptr)
+void ft_swap(t_pushswap *data)
 {
-	int	i;
-	int	p;
-	int	n;
-
-	i = 0;
-	p = 1;
-	n = 0;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || (nptr[i] == 32))
-		i++;
-	if (nptr[i] == '-')
-		p *= -1;
-	if (nptr[i] == '+' || nptr[i] == '-')
-		i++;
-	while (ft_isdigit(nptr[i]))
-		n = 10 * n + nptr[i++] - 48;
-	return (n * p);
+   
+}
+void ft_push(t_pushswap *data)
+{
+    
+}
+void ft_rotate(t_pushswap *data)
+{
+    
+}
+void ft_reverse_rotate(t_pushswap *data)
+{
+    
 }

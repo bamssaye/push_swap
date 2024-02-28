@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 12:18:30 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/02/27 02:24:06 by bamssaye         ###   ########.fr       */
+/*   Created: 2024/02/28 10:12:14 by bamssaye          #+#    #+#             */
+/*   Updated: 2024/02/28 17:08:30 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-int	ft_atoi(const char *nptr)
+void ft_error(t_pushswap *data)
+{
+    free(data->str);
+    ft_free_split(data->split);
+    free(data);
+}
+
+void	ft_free_split(char **str)
 {
 	int	i;
-	int	p;
-	int	n;
 
 	i = 0;
-	p = 1;
-	n = 0;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || (nptr[i] == 32))
-		i++;
-	if (nptr[i] == '-')
-		p *= -1;
-	if (nptr[i] == '+' || nptr[i] == '-')
-		i++;
-	while (ft_isdigit(nptr[i]))
-		n = 10 * n + nptr[i++] - 48;
-	return (n * p);
+	while (str[i] != NULL)
+        free (str[i++]);
+    free(str);
+}
+
+void ft_smallerror(void)
+{
+    write(1,"Error\n", 6);
 }

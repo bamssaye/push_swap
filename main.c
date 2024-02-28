@@ -6,61 +6,71 @@
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 05:14:06 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/02/25 12:57:12 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/02/28 14:05:34 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include "./libft/libft.h"
 #include <stdio.h>
+#include <unistd.h>
 #include <stdlib.h>
-typedef struct a_stack 
+#include <ctype.h>
+#include <stdio.h>
+#include <stdlib.h> // Include necessary header for malloc
+#include <string.h>
+
+// Define your struct members
+typedef struct a_pushswap
 {
-	int				stack;
-	struct a_stack	*next;
-} t_stack;
+    char **split;
+    char *str;
+    char **argv;
+} t_pushswap;
 
+// Declare functions before using them
+int ft_init(char **av);
+int ft_checkarg(t_pushswap *data);
 
-void addto_stack(t_stack **head, int value)
+int main(int ac, char **av)
 {
-	t_stack *node;
+    // Allocate memory for the t_pushswap struct
+    
 
-	node = malloc(sizeof(t_stack));
+    // Assign argv to data
+    // t_pushswap *data;
+
+    // Initialize data
+   	// if(!ft_init(av))
+   	// 	return (printf("Error"), 0);
 	
-	node->stack = value;
-	node->next = *head;
-	*head    = node;
+
+    if (ac > 1)
+    {
+        // if (!ft_init(av))
+        //     return printf("Error"), 0;
+		if (!strncmp(av[1], "-0",strlen(av[1])))
+			return (printf("Error"), 0);
+			 // Free allocated memory before returning
+    }
+ // Free allocated memory before exiting
+    return 0; // Indicate successful execution
 }
 
-void printList(t_stack *node)
+int ft_init(char **av)
 {
-  while (node != NULL)
-  {
-     printf(" %d ", node->stack);
-     node = node->next;
-  }
+	t_pushswap *data = malloc(sizeof(t_pushswap));
+    if (data == NULL) {
+        return 0; // Exit with error code
+    }
+	data->argv = av;
+	ft_checkarg(data);
+	//free(data);
+	return (1);
 }
 
-void freenode(t_stack *head)
+int ft_checkarg(t_pushswap *data)
 {
-	t_stack *tmp;
-	
-	while (head != NULL)
-	{
-		tmp = head;
-		head = head->next;
-		free (tmp);
-	}
-}
-int main()
-{
-	t_stack *a = NULL;
-	 
-	 
-	addto_stack(&a, 5);
-	addto_stack(&a, 9);
-	addto_stack(&a, 10);
-	printList(a);
-
-	freenode(a);
-
+    // Access argv through the data pointer
+    printf("%s\n", data->argv[1]); // Print
+    return 1; // Return value indicating success
 }

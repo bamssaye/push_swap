@@ -6,26 +6,40 @@
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 14:40:37 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/02/25 14:58:23 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/02/28 17:08:14 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "./libft/libft.h"
+#include <string.h>
 
-static char	**ft_freeargs(char **str)
+static char	*ft_strdup(const char *s)
 {
-	int	i;
+	char	*str;
+	size_t	len;
+	int		i;
 
+	len = ft_strlen(s);
+	str = malloc((len + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
 	i = 0;
-    while (str[i])
-        i++;
-    int j = 0;
-	while (j < i)
-		free(str[j++]);
-	free(str);
-	return (NULL);
+	while (s[i])
+	{
+		str[i] = s[i];
+		i++;
+	}
+	str[i] = 0;
+	return (str);
 }
+
+static int ft_zero(char *str)
+{
+    if (!ft_strncmp(str, "-0",ft_strlen(str)) || !ft_strncmp(str, "0",ft_strlen(str)) || !ft_strncmp(str, "+0",ft_strlen(str)))
+            return (1);
+    return (0);
+}
+
 static int ft_checkduplicat(char **str)
 {
     int i;
@@ -43,63 +57,50 @@ static int ft_checkduplicat(char **str)
             else
                 len = ft_strlen(str[i]);
             if (!ft_strncmp(str[i], str[j], len))
-                return (ft_freeargs(str), 0);
+                return (0);
             j++;
         }
         i++;
     }
-    ft_addtostack(str);
     return (1);
 }
 
-static int ft_checkstring(char *str)
+static int ft_checkall(t_pushswap *data)
 {
-    char **split;
     int i;
-    
+
     i = 0;
-    while (str[i])
+    data->split = ft_split(data->str, ' ');
+    while (data->split[i] != NULL)
     {
-        if (ft_isdigit(str[i]) || str[i] == ' ' || str[i] == '+' || str[i] == '-')
-            i++;
-        else
-            return (0);        
-    }
-    i = 0;
-    split = ft_split(str,' ');
-    while (split[i])
-    {
-        if(!ft_isdigit(split[i][0]) && !ft_isdigit(split[i][1])) 
-            return 0;
+        if ((!ft_atoi(data->split[i]) && !ft_zero(data->split[i])) || !ft_checkduplicat(data->split))
+            return (0);
         i++;
     }
-    if (!ft_checkduplicat(split))
-        return (0);
     return (1);
 }
 
-int ft_checkarg(char **string)
+int ft_checkarg(t_pushswap *data)
 {
-  
     int i;
-    char *all_stack;
-    
+    int check;
+
+    check = 1;
     i = 1;
-    if (string[i + 1] != NULL)
+    while (data->argv[i] != NULL)
     {
-        all_stack = ft_strdup(string[i++]);
-        all_stack = ft_strjoin(all_stack, " ");
-    }
-    else
-        all_stack = ft_strdup(string[i++]);
-    while (string[i])
-    {
-        all_stack = ft_strjoin(all_stack, string[i]);
-        if (string[i + 1] != NULL)
-            all_stack = ft_strjoin(all_stack, " ");
+        if (check == 1)
+        {
+            data->str = ft_strdup(data->argv[i]);
+            check = 0;
+        }
+        else
+            data->str = ft_strjoin(data->str, data->argv[i]);
+        if (data->argv[i + 1] != NULL)
+            data->str = ft_strjoin(data->str, " ");
         i++;
     }
-    if (!ft_checkstring(all_stack))
+    if(!ft_checkall(data))
         return (0);
     return (1);
 }
