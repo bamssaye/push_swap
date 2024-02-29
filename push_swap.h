@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bamssaye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 06:01:27 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/02/28 19:21:17 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/02/29 13:03:27 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 typedef struct a_stack 
 {
 	int				stack;
+	int				index;
 	struct a_stack	*next;
 } t_stack;
 
@@ -31,7 +32,8 @@ typedef struct a_pushswap
 	char	**split;
 	char	*str;
 	char	**argv;
-	int	length;
+	int		count_operaction;
+	int		stacklenght;
 } t_pushswap;
 
 //    UTILS/LIBFT_UTILS

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bamssaye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 06:01:30 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/02/28 17:10:46 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/02/29 13:03:44 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ static int ft_init(char **av)
     data->argv = av;
     data->a = NULL;
     data->b = NULL;
+    data->count_operaction = 0;
     if (!ft_checkarg(data))
         return (ft_error(data), 0);
     if (!ft_addto_stack_a(data))
@@ -28,9 +29,9 @@ static int ft_init(char **av)
 }
 int main(int ac, char **av)
 {
-    int         i;
+    // int         i;
     
-    i = 0;
+    // i = 0;
     if (ac > 1)
     {
         if (!ft_init(av))
