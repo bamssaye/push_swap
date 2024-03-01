@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_add_to_stack.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamssaye <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 14:52:04 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/02/29 13:01:20 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/01 15:04:33 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,7 @@ int ft_addto_stack_a(t_pushswap *data)
   }
   // if (ft_checksort(data))
   //   return (1);
+  ft_swap(data, 'a');
   ft_swap(data, 'a');
   printList(data->a);
   return (1);
