@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sortrules.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bamssaye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 16:17:53 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/01 15:06:25 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/06 02:02:32 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+
 
 void ft_swap(t_pushswap *data, int stack)
 {

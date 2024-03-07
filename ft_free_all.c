@@ -1,46 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_clean.c                                         :+:      :+:    :+:   */
+/*   ft_free_all.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bamssaye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/26 23:39:37 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/02/28 17:08:09 by bamssaye         ###   ########.fr       */
+/*   Created: 2024/03/06 16:34:22 by bamssaye          #+#    #+#             */
+/*   Updated: 2024/03/07 16:48:13 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_freenode(t_stack *head )
-{
-	t_stack *tmp;
-	
-	while (head != NULL)
-	{
-		tmp = head;
-		head = head->next;
-		free (tmp);
-	}
-}
-
-void	ft_freeargs(char **str)
+void	ft_freespac(char **str)
 {
 	int	i;
 
 	i = 0;
+    if (str == NULL)
+        return;
     while (str[i])
-        i++;
-    int j = 0;
-	while (j < i)
-		free(str[j++]);
-	free(str);
-    str = NULL;
-	//return (NULL);
+        free(str[i++]);
+    free(str);
 }
 
-void ft_cleanerro(void)
+void ft_error_all(t_pushswap *data)
 {
-    ft_putstr_fd("Error", 1);
+    free(data->str);
+    ft_freespac(data->split);
+    free(data);
+    write(1, "Error\n", 6);
     exit(1);
 }

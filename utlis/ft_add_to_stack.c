@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_add_to_stack.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bamssaye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 14:52:04 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/01 15:04:33 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/06 02:02:17 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+
 
 static void ft_add_to_stack(t_stack **head, int value, int index)
 {
@@ -19,8 +19,8 @@ static void ft_add_to_stack(t_stack **head, int value, int index)
   
   lst = *head;
 	new_node = malloc(sizeof(t_stack));
-	new_node->stack = value;
-  new_node->index = index;
+	new_node->stack[new_node->index] = value;
+  new_node->index++;
 	new_node->next = NULL;
   if(*head == NULL)
     *head = new_node;

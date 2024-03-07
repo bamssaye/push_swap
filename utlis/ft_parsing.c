@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parsing.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bamssaye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 14:40:37 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/02/28 17:08:14 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/06 19:03:32 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+
 #include <string.h>
+#include <ctype.h>
 
 static char	*ft_strdup(const char *s)
 {
@@ -19,7 +20,7 @@ static char	*ft_strdup(const char *s)
 	size_t	len;
 	int		i;
 
-	len = ft_strlen(s);
+    len = ft_strlen(s);
 	str = malloc((len + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
@@ -77,6 +78,11 @@ static int ft_checkall(t_pushswap *data)
             return (0);
         i++;
     }
+    i = 0;
+    while (data->split[i] != NULL)
+    {
+        printf("%s\n",data->split[i++]);
+    }
     return (1);
 }
 
@@ -85,22 +91,23 @@ int ft_checkarg(t_pushswap *data)
     int i;
     int check;
 
-    check = 1;
+    check = 0;
     i = 1;
     while (data->argv[i] != NULL)
     {
-        if (check == 1)
-        {
+        if(ft_strdup(data->argv[i]) == NULL)
+            return (0);
+        if (check == i - 1)
             data->str = ft_strdup(data->argv[i]);
-            check = 0;
-        }
         else
             data->str = ft_strjoin(data->str, data->argv[i]);
         if (data->argv[i + 1] != NULL)
             data->str = ft_strjoin(data->str, " ");
         i++;
     }
+    
     if(!ft_checkall(data))
         return (0);
     return (1);
 }
+// 4 3 5

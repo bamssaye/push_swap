@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   libft_utlis.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bamssaye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 02:17:21 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/02/28 14:12:16 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/07 15:57:14 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 int	ft_isdigit(int c)
 {
@@ -27,7 +27,7 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-int	ft_atoi(const char *nptr)
+int	ft_atoi(const char *nptr, t_pushswap *data)
 {
 	int		i;
 	int		p;
@@ -44,11 +44,11 @@ int	ft_atoi(const char *nptr)
 	{
 		n = 10 * n + nptr[i] - 48;
 		if ((n > 2147483647 && p == 1) || (n > 2147483648 && p == -1))
-			return (0);
+			return (ft_error_all(data), 0);
 		i++;
 	}
-	if (nptr[i] != '\0' || (nptr[i - 1] == '+' && nptr[i] != '\0') || (nptr[i - 1] == '-' && nptr[i] != '\0'))
-		return (0);
+	if (nptr[i] != '\0')
+		return (ft_error_all(data), 0);
 	return (n * p);
 }
 
