@@ -6,7 +6,7 @@
 /*   By: bamssaye <bamssaye@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 05:14:06 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/08 23:34:21 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/08 23:36:06 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main(int ac, char **av)
     {
         data = malloc(sizeof(t_pushswap));
         ft_init(data, av);
-        //ft_error_all(data, 3);
+        ft_error_all(data, 3);
     }
 }
 
