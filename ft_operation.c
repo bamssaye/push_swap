@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_operation.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bamssaye <bamssaye@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 03:55:37 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/08 05:46:38 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/08 23:32:46 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,25 +82,23 @@ void    ft_rotate(t_pushswap *data, int flag)
     int i;
     int tmp;
 
-    i = 0;
+    i = -1;
     if (flag == 'a')
     {
-        while (i < data->stack_a_lenght - 1)
+        while (++i < data->stack_a_lenght - 1)
         {
             tmp = data->stack_a[i];
             data->stack_a[i] = data->stack_a[i + 1];
             data->stack_a[i + 1] = tmp;
-            i++;
         }
     }
     else
     {
-        while (i < data->stack_b_lenght - 1)
+        while (++i < data->stack_b_lenght - 1)
         {
             tmp = data->stack_b[i];
             data->stack_b[i] = data->stack_b[i + 1];
             data->stack_b[i + 1] = tmp;
-            i++;
         }
     }
 }
@@ -112,24 +110,22 @@ void    ft_reverse_rotate(t_pushswap *data, int flag)
  
     if (flag == 'a')
     {
-        i = data->stack_a_lenght - 1;
-        while (i > 0)
+        i = data->stack_a_lenght;
+        while (--i > 0)
         {
             tmp = data->stack_a[i];
             data->stack_a[i] = data->stack_a[i - 1];
             data->stack_a[i - 1] = tmp;
-            i--;
         }
     }
     else
     {
-        i = data->stack_b_lenght - 1;
-        while (i > 0)
+        i = data->stack_b_lenght;
+        while (--i > 0)
         {
             tmp = data->stack_b[i];
             data->stack_b[i] = data->stack_b[i - 1];
             data->stack_b[i - 1] = tmp;
-            i--;
         }
     }
 }

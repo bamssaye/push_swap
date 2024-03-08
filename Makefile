@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+         #
+#    By: bamssaye <bamssaye@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/28 16:29:29 by bamssaye          #+#    #+#              #
-#    Updated: 2024/03/08 02:04:58 by bamssaye         ###   ########.fr        #
+#    Updated: 2024/03/08 23:31:42 by bamssaye         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ CFLAGS = -Wall -Wextra -Werror
 FUN = ft_check_input.c ft_checkdup.c\
 	ft_free_all.c ft_init_stack.c\
 	ft_split.c ft_stack_value.c\
-	libft_utlis.c ft_small_sort.c
+	libft_utlis.c ft_small_sort.c\
+	ft_operation.c
 AR = ar -rc
 RM = rm -f
 OBJS_DIR = obj
