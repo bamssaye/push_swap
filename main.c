@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamssaye <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 05:14:06 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/06 01:56:19 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/08 01:21:18 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ int main(int ac, char **av)
     
     if (ac > 1)
     {
+        data = malloc(sizeof(t_pushswap));
         ft_init(data, av);
+        ft_error_all(data, 0);
     }
 }
 

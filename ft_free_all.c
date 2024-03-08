@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free_all.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamssaye <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 16:34:22 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/07 16:48:13 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/08 01:20:50 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,16 @@ void	ft_freespac(char **str)
     free(str);
 }
 
-void ft_error_all(t_pushswap *data)
+void ft_error_all(t_pushswap *data, int c)
 {
-    free(data->str);
-    ft_freespac(data->split);
+    if (data->str)
+        free(data->str);
+    if (data->tmp)
+        free(data->tmp);
+    if(data->split)
+        ft_freespac(data->split);
     free(data);
-    write(1, "Error\n", 6);
+    if (c == 1)
+        write(1, "Error\n", 6);
     exit(1);
 }

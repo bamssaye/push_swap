@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamssaye <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 06:01:27 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/07 17:46:40 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/08 01:21:11 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ typedef struct a_pushswap
 void 	ft_init(t_pushswap *data, char **av);
 int		ft_count_a(t_pushswap *data, char **av);
 char	**ft_split(char const *s, char c);
-void	ft_error_all(t_pushswap *data);
+void	ft_error_all(t_pushswap *data, int c);
 void	ft_freespac(char **str);
 void	ft_checkdup(t_pushswap *data);
 

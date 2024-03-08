@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_checkdup.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamssaye <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 16:54:43 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/07 17:12:32 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/08 01:22:15 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_checkdup(t_pushswap *data)
     while(data->split[++i])
         data->tmp[i] = ft_atoi(data->split[i], data);
     if (ft_checknumber(data->tmp, data->stack_a_lenght))
-        ft_error_all(data);
+        ft_error_all(data, 1);
     i = 0;
     while (i < data->stack_a_lenght)
         printf("%d->", data->tmp[i++]);

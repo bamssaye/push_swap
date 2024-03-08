@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_input.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamssaye <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 02:21:01 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/07 16:44:02 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/08 01:21:43 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,18 +41,18 @@ void	ft_check_valid(char *str, t_pushswap *data)
         if (ft_isdigit(str[i]))
             break;
     if (!str[i])
-        ft_error_all(data);
+        ft_error_all(data, 1);
     i = 0;
 	while (str[i])
 	{
 		if (((str[i] == '-') && (!ft_isdigit(str[i + 1])))
 		|| ((str[i] == '+') && (!ft_isdigit(str[i + 1]))))
-			ft_error_all(data);
+			ft_error_all(data, 1);
 		if ((ft_isdigit(str[i])) || (str[i] == ' ')
 			|| (str[i] == '-') || (str[i] == '+'))
 			i++;
 		else
-			ft_error_all(data);
+			ft_error_all(data, 1);
 	}
 }
 
@@ -78,6 +78,5 @@ int	ft_count_a(t_pushswap *data, char **av)
     i = 0;
     while (data->split[i])
         i++;
-    free(data->str);
     return (i);
 }
