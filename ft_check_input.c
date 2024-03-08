@@ -6,7 +6,7 @@
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 02:21:01 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/08 02:25:54 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/08 05:21:20 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static void ft_check_valid(char *str, t_pushswap *data)
 	{
 		if (((str[i] == '-') && (!ft_isdigit(str[i + 1])))
 		|| ((str[i] == '+') && (!ft_isdigit(str[i + 1]))))
-			ft_error_all(data, 1);
+			ft_error_all(data, 2);
 		if ((ft_isdigit(str[i])) || (str[i] == ' ')
 			|| (str[i] == '-') || (str[i] == '+'))
 			i++;

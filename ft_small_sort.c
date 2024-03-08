@@ -6,7 +6,7 @@
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 01:42:38 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/08 03:02:42 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/08 05:17:26 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void ft_checksort(t_pushswap *data, int count)
     int i;
 
     i = 0;
-    while (i < count)
+    while (i < count - 1)
     {
         if (data->stack_a[i] > data->stack_a[i + 1])
             return;
