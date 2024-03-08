@@ -6,7 +6,7 @@
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 06:01:27 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/08 01:21:11 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/08 04:03:21 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,21 +53,14 @@ char	**ft_split(char const *s, char c);
 void	ft_error_all(t_pushswap *data, int c);
 void	ft_freespac(char **str);
 void	ft_checkdup(t_pushswap *data);
-
+void	ft_smallsort(t_pushswap *data,int count);
 
 //find palce
+void	ft_setup_init(t_pushswap *data);
 int     ft_find_max(t_pushswap *data, int c);
 int     ft_find_min(t_pushswap *data, int c);
 int     ft_find_idex_max(t_pushswap *data, int c);
-int     ft_find_idex_max(t_pushswap *data, int c);
-
-
-
-
-
-
-
-
+int     ft_find_idex_min(t_pushswap *data, int c);
 
 
 //    UTILS/LIBFT_UTILS
@@ -76,6 +69,14 @@ size_t	ft_strlen(const char *s);
 int		ft_atoi(const char *nptr, t_pushswap *data);
 int		ft_strncmp(const char *s1, const char *s2, size_t len);
 char	*ft_strjoin(char *s1, char *s2);
+
+
+
+
+
+
+
+
 // char	**ft_split(char const *s, char c);
 // int     ft_checkarg(t_pushswap *data);
 // // free Error

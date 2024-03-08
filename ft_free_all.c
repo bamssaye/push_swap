@@ -6,7 +6,7 @@
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 16:34:22 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/08 01:20:50 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/08 02:24:34 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,13 @@ void ft_error_all(t_pushswap *data, int c)
         free(data->tmp);
     if(data->split)
         ft_freespac(data->split);
+    if ((c % 3) == 0)
+    {
+        free(data->stack_a);
+        free(data->stack_b);
+    }
     free(data);
-    if (c == 1)
+    if ((c % 2) == 0)
         write(1, "Error\n", 6);
     exit(1);
 }

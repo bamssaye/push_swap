@@ -6,7 +6,7 @@
 #    By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/28 16:29:29 by bamssaye          #+#    #+#              #
-#    Updated: 2024/03/08 01:24:13 by bamssaye         ###   ########.fr        #
+#    Updated: 2024/03/08 02:04:58 by bamssaye         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS = -Wall -Wextra -Werror
 FUN = ft_check_input.c ft_checkdup.c\
 	ft_free_all.c ft_init_stack.c\
 	ft_split.c ft_stack_value.c\
-	libft_utlis.c
+	libft_utlis.c ft_small_sort.c
 AR = ar -rc
 RM = rm -f
 OBJS_DIR = obj

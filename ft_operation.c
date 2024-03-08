@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_operation.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 05:14:06 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/08 02:52:53 by bamssaye         ###   ########.fr       */
+/*   Created: 2024/03/08 03:55:37 by bamssaye          #+#    #+#             */
+/*   Updated: 2024/03/08 04:06:43 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int ac, char **av)
-{
-    t_pushswap *data;
-    
-    if (ac > 1)
-    {
-        data = malloc(sizeof(t_pushswap));
-        ft_init(data, av);
-        ft_error_all(data, 3);
-    }
-}
 
+void    ft_swap(t_pushswap *data, char *flag)
+{
+    
+}
+void    ft_push();
+void    ft_rotate();
+void    ft_reverse_rotate();

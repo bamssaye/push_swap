@@ -6,7 +6,7 @@
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 02:17:21 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/08 01:22:48 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/08 02:26:21 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,11 @@ int	ft_atoi(const char *nptr, t_pushswap *data)
 	{
 		n = 10 * n + nptr[i] - 48;
 		if ((n > 2147483647 && p == 1) || (n > 2147483648 && p == -1))
-			return (ft_error_all(data, 1), 0);
+			return (ft_error_all(data, 2), 0);
 		i++;
 	}
 	if (nptr[i] != '\0')
-		return (ft_error_all(data, 1), 0);
+		return (ft_error_all(data, 2), 0);
 	return (n * p);
 }
 

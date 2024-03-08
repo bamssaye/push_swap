@@ -3,12 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_operaction.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamssaye <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 12:13:19 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/06 02:02:27 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/08 03:57:13 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 
-
+void ft_sa(t_pushswap *data)
+{
+    
+}

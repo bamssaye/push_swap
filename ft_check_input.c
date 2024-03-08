@@ -6,7 +6,7 @@
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 02:21:01 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/08 01:21:43 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/08 02:25:54 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ static char	*ft_strdup(const char *s)
 	str[i] = 0;
 	return (str);
 }
-void	ft_check_valid(char *str, t_pushswap *data)
+
+static void ft_check_valid(char *str, t_pushswap *data)
 {
 	int		i;
 
@@ -41,7 +42,7 @@ void	ft_check_valid(char *str, t_pushswap *data)
         if (ft_isdigit(str[i]))
             break;
     if (!str[i])
-        ft_error_all(data, 1);
+        ft_error_all(data, 2);
     i = 0;
 	while (str[i])
 	{
@@ -52,7 +53,7 @@ void	ft_check_valid(char *str, t_pushswap *data)
 			|| (str[i] == '-') || (str[i] == '+'))
 			i++;
 		else
-			ft_error_all(data, 1);
+			ft_error_all(data, 2);
 	}
 }
 
