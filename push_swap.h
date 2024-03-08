@@ -6,7 +6,7 @@
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 06:01:27 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/08 04:03:21 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/08 05:49:17 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,12 @@ int     ft_find_min(t_pushswap *data, int c);
 int     ft_find_idex_max(t_pushswap *data, int c);
 int     ft_find_idex_min(t_pushswap *data, int c);
 
-
+// operation
+void    ft_push_a(t_pushswap *data);
+void	ft_push_b(t_pushswap *data);
+void    ft_swap(t_pushswap *data, int flag);
+void    ft_rotate(t_pushswap *data, int flag);
+void    ft_reverse_rotate(t_pushswap *data, int flag);
 //    UTILS/LIBFT_UTILS
 int		ft_isdigit(int c);
 size_t	ft_strlen(const char *s);
