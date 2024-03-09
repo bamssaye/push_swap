@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_operation.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamssaye <bamssaye@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 03:55:37 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/08 23:32:46 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/09 02:22:12 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,20 @@ void    ft_push_a(t_pushswap *data)
     int tmp;
     
     i = -1;
-    tmp = data->stack_a[0];
-    while (++i < data->stack_a_lenght - 1)
-        data->stack_a[i] = data->stack_a[i + 1];
-    data->stack_a_lenght--;
-    i = data->stack_b_lenght;
+    if (data->stack_b_lenght == 0)
+        return;
+    tmp = data->stack_b[0];
+    while (++i < data->stack_b_lenght)
+        data->stack_b[i] = data->stack_b[i + 1];
+    data->stack_b_lenght--;
+    i = data->stack_a_lenght;
     while (i > 0)
     {
-            data->stack_b[i] = data->stack_b[i - 1];
+            data->stack_a[i] = data->stack_a[i - 1];
         i--;
     }
-    data->stack_b[0] = tmp;
-    data->stack_b_lenght++;
+    data->stack_a[0] = tmp;
+    data->stack_a_lenght++;
     write(1, "pa\n", 3);
 }
 
@@ -41,7 +43,7 @@ void ft_push_b(t_pushswap *data)
     
     i = -1;
     tmp = data->stack_a[0];
-    while (++i < data->stack_a_lenght - 1)
+    while (++i < data->stack_a_lenght)
         data->stack_a[i] = data->stack_a[i + 1];
     data->stack_a_lenght--;
     i = data->stack_b_lenght;

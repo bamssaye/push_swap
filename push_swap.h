@@ -6,7 +6,7 @@
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 06:01:27 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/08 05:49:17 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/09 02:32:36 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ft_error_all(t_pushswap *data, int c);
 void	ft_freespac(char **str);
 void	ft_checkdup(t_pushswap *data);
 void	ft_smallsort(t_pushswap *data,int count);
-
+void	ft_checksort(t_pushswap *data);
 //find palce
 void	ft_setup_init(t_pushswap *data);
 int     ft_find_max(t_pushswap *data, int c);

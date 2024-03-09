@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bamssaye <bamssaye@student.1337.ma>        +#+  +:+       +#+         #
+#    By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/28 16:29:29 by bamssaye          #+#    #+#              #
-#    Updated: 2024/03/08 23:31:42 by bamssaye         ###   ########.fr        #
+#    Updated: 2024/03/09 01:51:13 by bamssaye         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap.a
+NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 FUN = ft_check_input.c ft_checkdup.c\
@@ -19,20 +19,25 @@ FUN = ft_check_input.c ft_checkdup.c\
 	libft_utlis.c ft_small_sort.c\
 	ft_operation.c
 AR = ar -rc
-RM = rm -f
-OBJS_DIR = obj
-OBG =  ${FUN:%.c=%.o}
+RM = rm -rf
+OBJDIR = obj
+OBG =  $(addprefix $(OBJDIR)/, $(FUN:%.c=%.o))
 FSA = -fsanitize=address
-	
+
+
 all : $(NAME)
 
+$(OBJDIR)/%.o:%.c
+	@mkdir -p $(OBJDIR)
+	@$(CC) $(CFLAGS) -c $< -o $@
 $(NAME) : $(OBG)
-	$(AR) $(NAME) $(OBG)
-	$(CC) main.c $(NAME) $(FSA) -o push_swap
-
+	@$(CC) main.c  $(FSA) $(OBG) -o $(NAME)
+	@echo "make done"
 clean :
-	$(RM) $(OBG) $(NAME)
+	@$(RM) $(OBJDIR)
+	@echo "clean object"
 fclean :
-	$(RM) $(OBG) $(NAME) push_swap
-re : 
+	@$(RM) $(OBG) $(NAME)
+	@echo "clean all"
+re : fclean all
  
