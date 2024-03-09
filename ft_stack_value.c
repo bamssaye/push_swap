@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stack_value.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bamssaye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 17:23:58 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/08 00:44:48 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/09 05:46:54 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ int ft_find_max(t_pushswap *data, int c)
     i = -1;
     if (c == 'a')
     {
-        max = data->stack_a[i];
+        max = data->stack_a[0];
         while (++i < data->stack_a_lenght)
             if (data->stack_a[i] > max)
                 max = data->stack_a[i];
     }
     else
     {
-        max = data->stack_b[i];
+        max = data->stack_b[0];
         while (++i < data->stack_b_lenght)
             if (data->stack_b[i] > max)
                 max = data->stack_b[i];
@@ -43,14 +43,14 @@ int ft_find_min(t_pushswap *data, int c)
     i = -1;
     if (c == 'a')
     {
-        min = data->stack_a[i];
+        min = data->stack_a[0];
         while (++i < data->stack_a_lenght)
             if (data->stack_a[i] < min)
                 min = data->stack_a[i];
     }
     else
     {
-        min = data->stack_b[i];
+        min = data->stack_b[0];
         while (++i < data->stack_b_lenght)
             if (data->stack_b[i] < min)
                 min = data->stack_b[i];

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bamssaye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 06:01:27 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/09 02:32:36 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/09 05:53:29 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,9 @@ int     ft_find_min(t_pushswap *data, int c);
 int     ft_find_idex_max(t_pushswap *data, int c);
 int     ft_find_idex_min(t_pushswap *data, int c);
 
+
+// sort algorth
+void	ft_sort_three(t_pushswap *data);
 // operation
 void    ft_push_a(t_pushswap *data);
 void	ft_push_b(t_pushswap *data);

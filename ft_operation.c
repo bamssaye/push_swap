@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_operation.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bamssaye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 03:55:37 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/09 02:22:12 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/09 05:51:21 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ void    ft_rotate(t_pushswap *data, int flag)
             data->stack_a[i] = data->stack_a[i + 1];
             data->stack_a[i + 1] = tmp;
         }
+        write(1, "ra\n", 3);
     }
     else
     {
@@ -102,6 +103,7 @@ void    ft_rotate(t_pushswap *data, int flag)
             data->stack_b[i] = data->stack_b[i + 1];
             data->stack_b[i + 1] = tmp;
         }
+        write(1, "rb\n", 3);
     }
 }
 
@@ -119,6 +121,7 @@ void    ft_reverse_rotate(t_pushswap *data, int flag)
             data->stack_a[i] = data->stack_a[i - 1];
             data->stack_a[i - 1] = tmp;
         }
+        write(1, "rra\n", 4);
     }
     else
     {
@@ -129,5 +132,6 @@ void    ft_reverse_rotate(t_pushswap *data, int flag)
             data->stack_b[i] = data->stack_b[i - 1];
             data->stack_b[i - 1] = tmp;
         }
+        write(1, "rrb\n", 4);
     }
 }
