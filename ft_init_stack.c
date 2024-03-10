@@ -6,12 +6,33 @@
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 02:03:29 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/08 04:03:56 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/10 02:24:32 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+int ft_checksort(t_pushswap *data)
+{
+    int i;
+
+    i = 0;
+    while (i < data->stack_a_lenght - 1)
+    {
+        if (data->stack_a[i] > data->stack_a[i + 1])
+            return (1);
+        i++;
+    }
+    return (0);
+}
+
+void    ft_find_middle(t_pushswap *data)
+{
+    if (data->stack_a_lenght % 2 == 0)
+        data->stack_a_middle = data->stack_a_lenght / 2;
+    else
+        data->stack_a_middle = (data->stack_a_lenght / 2) + 1;
+}
 
 void ft_init(t_pushswap *data, char **av)
 {
@@ -40,4 +61,5 @@ void ft_setup_init(t_pushswap *data)
 	data->stack_b_max = ft_find_max(data, 'b');
 	data->stack_b_index_min = ft_find_idex_min(data, 'b');
 	data->stack_b_index_max = ft_find_idex_max(data, 'b');
+    ft_find_middle(data);
 }

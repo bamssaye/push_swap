@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_add_to_stack.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamssaye <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 14:52:04 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/06 02:02:17 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/10 01:31:37 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void printList(t_stack *node)
      node = node->next;
   }
 }
-static int ft_checksort(t_pushswap *data)
+static int ft_checkdsort(t_pushswap *data)
 {
   t_stack *tmp;
   

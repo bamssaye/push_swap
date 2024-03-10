@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stack_value.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamssaye <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 17:23:58 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/09 05:46:54 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/10 02:15:13 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int ft_find_max(t_pushswap *data, int c)
     i = -1;
     if (c == 'a')
     {
+        if (data->stack_a_lenght < 2)
+            return (0);
         max = data->stack_a[0];
         while (++i < data->stack_a_lenght)
             if (data->stack_a[i] > max)
@@ -27,6 +29,8 @@ int ft_find_max(t_pushswap *data, int c)
     }
     else
     {
+        if (data->stack_b_lenght < 2)
+            return (0);
         max = data->stack_b[0];
         while (++i < data->stack_b_lenght)
             if (data->stack_b[i] > max)
@@ -43,6 +47,8 @@ int ft_find_min(t_pushswap *data, int c)
     i = -1;
     if (c == 'a')
     {
+        if (data->stack_a_lenght < 2)
+            return (0);
         min = data->stack_a[0];
         while (++i < data->stack_a_lenght)
             if (data->stack_a[i] < min)
@@ -50,6 +56,8 @@ int ft_find_min(t_pushswap *data, int c)
     }
     else
     {
+        if (data->stack_b_lenght < 2)
+            return (0);
         min = data->stack_b[0];
         while (++i < data->stack_b_lenght)
             if (data->stack_b[i] < min)
@@ -65,6 +73,8 @@ int ft_find_idex_max(t_pushswap *data, int c)
     i = -1;
     if (c == 'a')
     {
+        if (data->stack_a_lenght < 2)
+            return (0);
         max_idex = ft_find_max(data, 'a');
         while (++i < data->stack_a_lenght)
             if (data->stack_a[i] == max_idex)
@@ -72,6 +82,8 @@ int ft_find_idex_max(t_pushswap *data, int c)
     }
     else
     {
+        if (data->stack_b_lenght < 2)
+            return (0);
         max_idex = ft_find_max(data, 'b');
         while (++i < data->stack_b_lenght)
             if (data->stack_b[i] == max_idex)
@@ -87,6 +99,8 @@ int ft_find_idex_min(t_pushswap *data, int c)
     i = -1;
     if (c == 'a')
     {
+        if (data->stack_a_lenght < 2)
+            return (0);
         min_idex = ft_find_min(data, 'a');
         while (++i < data->stack_a_lenght)
             if (data->stack_a[i] == min_idex)
@@ -94,6 +108,8 @@ int ft_find_idex_min(t_pushswap *data, int c)
     }
     else
     {
+        if (data->stack_b_lenght < 2)
+            return (0);
         min_idex = ft_find_min(data, 'b');
         while (++i < data->stack_b_lenght)
             if (data->stack_b[i] == min_idex)

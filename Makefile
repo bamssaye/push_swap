@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bamssaye <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/28 16:29:29 by bamssaye          #+#    #+#              #
-#    Updated: 2024/03/09 04:48:52 by bamssaye         ###   ########.fr        #
+#    Updated: 2024/03/10 05:43:09 by bamssaye         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,12 +17,13 @@ FUN = ft_check_input.c ft_checkdup.c\
 	ft_free_all.c ft_init_stack.c\
 	ft_split.c ft_stack_value.c\
 	libft_utlis.c ft_small_sort.c\
-	ft_operation.c main.c
+	ft_operation.c ft_big_sort.c\
+	main.c
 AR = ar -rc
 RM = rm -rf
 OBJDIR = obj
 OBG =  $(addprefix $(OBJDIR)/, $(FUN:%.c=%.o))
-FSA = -g3 -ggdb
+FSA = -fsanitize=address -g3
 
 
 all : $(NAME)

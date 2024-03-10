@@ -1,24 +1,36 @@
-// rra
-    // while (index > 0)
-    // {
-    //     tmp = arr[index];
-    //     arr[index] = arr[index - 1];
-    //     arr[index - 1] = tmp;
-    //     index--;
-    // }
-    //ra
-     int i = 0;
-    // while (i < index - 1)
-    // {
-    //     tmp = arr[i];
-    //     arr[i] = arr[i + 1];
-    //     arr[i + 1] = tmp;
-    //     i++;
-    // }
-    //swap
-    // tmp = arr[i];
-    // arr[i] = arr[i + 1];
-    // arr[i + 1] = tmp;
+    int    num_ele;
+    int    i;
+
+    i = 0;
+    num_ele = ft_lstsize(stack_a);
+    ft_position_in_array(array,stack_a);
+    while (i < num_ele)
+    {
+        if ((stack_a)->index <= i)
+        {
+            ft_push(stack_a, stack_b, 'a');
+            ft_rotate(stack_b, 'b');
+            i++;
+        }
+        else if ((stack_a)->index <= i + p)
+        {
+            ft_push(stack_a, stack_b, 'a');
+            i++;
+        }
+        else if (find_index(stack_a, i, p) < ft_lstsize(stack_a) / 2)
+            ft_rotate(stack_a, 'a');
+        else
+            ft_rev_rotate(stack_a, 'a');
+    }
+    ft_push_to_a(stack_a, stack_b);
+//
+
+array = ft_fill_aray(stack_a);
+    ft_sort_array(array, ft_lstsize(stack_a));
+    if (ft_lstsize(*stack_a) < 400)
+        ft_sort_chunk(stack_a, stack_b, array, 15);
+    else
+        ft_sort_chunk(stack_a, stack_b, array, 30);
+    free(array);
 
 
-https://saadloukili.github.io/Push-Swap-Visualizer/random.html

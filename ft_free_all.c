@@ -6,7 +6,7 @@
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 16:34:22 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/08 02:24:34 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/10 06:18:29 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,16 @@ void	ft_freespac(char **str)
         free(str[i++]);
     free(str);
 }
+void    ft_sfree_po(int **stack_po)
+{
+    int i;
 
+    i = 0;
+    while (i <  6)
+        free(stack_po[i++]);
+    free(stack_po);
+    stack_po = NULL;
+}
 void ft_error_all(t_pushswap *data, int c)
 {
     if (data->str)

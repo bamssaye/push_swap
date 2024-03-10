@@ -3,33 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_small_sort.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamssaye <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 01:42:38 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/09 05:51:07 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/10 02:52:27 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 
-void ft_checksort(t_pushswap *data)
-{
-    int i;
-
-    i = 0;
-    while (i < data->stack_a_lenght - 1)
-    {
-        if (data->stack_a[i] > data->stack_a[i + 1])
-            return;
-        i++;
-    }
-    ft_error_all(data, 3);
-}
-
 void ft_sort_three(t_pushswap *data)
 {
-    if (data->stack_a[data->stack_a_lenght - 1] == ft_find_max(data, 'a'))
+    
+    if (data->stack_a[data->stack_a_lenght - 1] == ft_find_max(data, 'a') && ft_checksort(data))
             ft_swap(data, 'a');
     else if (data->stack_a[data->stack_a_lenght - 1] == ft_find_min(data, 'a') 
     && data->stack_a[0] == ft_find_max(data, 'a'))
@@ -52,24 +39,39 @@ void ft_sort_three(t_pushswap *data)
         ft_reverse_rotate(data, 'a');
 }
 
+void    ft_sort_five(t_pushswap *data, int count)
+{
+    int i;
+    int in;
+
+    while (count > 3)
+    {
+        ft_setup_init(data);
+        i = (data->stack_a_lenght - data->stack_a_index_min) + 1;
+        in = data->stack_a_index_min + 1;
+        if (data->stack_a_index_min >= data->stack_a_middle)
+            while (--i)
+                ft_reverse_rotate(data, 'a');
+        else
+            while (--in)
+                ft_rotate(data, 'a');
+        ft_push_b(data);
+        count--;
+    }
+    ft_sort_three(data);
+    i = data->stack_b_lenght + 1;
+    while (--i)
+        ft_push_a(data);
+}
+
 void	ft_smallsort(t_pushswap *data, int count)
 {
-    ft_checksort(data);
+    if(!ft_checksort(data))
+        ft_error_all(data, 3);
     if (count == 2)
         ft_swap(data, 'a');
     if (count == 3)   
         ft_sort_three(data);
-    // int i = 0;
-    // while(i < data->stack_a_lenght)
-    //     printf("%d ", data->stack_a[i++]);
-    // printf("\n%d %d", ft_find_min(data, 'a'), ft_find_max(data, 'a'));
-
+    if (count <= 5)
+        ft_sort_five(data, count);
 }
-/*
-
-
-2 3 1 -> 3 2 1 -> sa
-
-
-
-*/
