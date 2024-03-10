@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft_utlis.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamssaye <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 02:17:21 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/09 04:13:45 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/10 08:32:04 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,19 +52,22 @@ int	ft_atoi(const char *nptr, t_pushswap *data)
 	return (n * p);
 }
 
-int	ft_strncmp(const char *s1, const char *s2, size_t len)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	if (!len)
-		return (0);
-	while (len > 0 && (*s1 || *s2))
-	{
-		if (*s1 != *s2)
-			return ((unsigned char)*s1 - (unsigned char)*s2);
-		s1++;
-		s2++;
-		len--;
-	}
-	return (0);
+	void	*p;
+	size_t	s;
+	size_t	i;
+
+	s = nmemb * size;
+	if (size && (s / size) != nmemb)
+		return (NULL);
+	p = malloc(s);
+	if (!p)
+		return (NULL);
+	i = 0;
+	while (i < s)
+		((unsigned char*)p)[i++] = 0;
+	return ((void*)p);
 }
 
 char	*ft_strjoin(char *s1, char *s2)

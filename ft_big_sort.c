@@ -6,7 +6,7 @@
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 02:54:10 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/10 06:48:49 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/10 08:27:41 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,18 +78,17 @@ void ft_algo(t_pushswap *data, int op)
     count = data->stack_a_lenght;
     while (i < count)
     {
-        if (data->stack_po[i] <= i)
+        if (data->stack_po[i][0] <= i)
         {
             ft_push_b(data);
             ft_rotate(data, 'b');
             i++;
         }
-        else if (data->stack_po[i] <= i + op)
+        else if (data->stack_po[i][0] <= i + op)
         {
             ft_push_b(data);
             i++;
         }
-        else if ()
     }
 }
 void	ft_bigsort(t_pushswap *data)
