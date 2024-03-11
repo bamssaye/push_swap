@@ -6,7 +6,7 @@
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 06:01:27 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/10 08:33:18 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/11 01:16:12 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,8 @@ char	*ft_strjoin(char *s1, char *s2);
 char	**ft_split(char const *s, char c);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*get_next_line(int fd);
-
+void	ft_rotatr_2(t_pushswap *data);
+void	ft_remove_2(t_pushswap *data);
 
 
 

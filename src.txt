@@ -33,4 +33,9 @@ array = ft_fill_aray(stack_a);
         ft_sort_chunk(stack_a, stack_b, array, 30);
     free(array);
 
+ 
+y = (15 / 400) * data->size_arr + (15 - 15 / 4)
 
+
+
+-fsanitize=address -g3
