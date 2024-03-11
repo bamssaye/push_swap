@@ -6,7 +6,7 @@
 #    By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/28 16:29:29 by bamssaye          #+#    #+#              #
-#    Updated: 2024/03/10 22:36:48 by bamssaye         ###   ########.fr        #
+#    Updated: 2024/03/11 04:54:48 by bamssaye         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ AR = ar -rc
 RM = rm -rf
 OBJDIR = obj
 OBG =  $(addprefix $(OBJDIR)/, $(FUN:%.c=%.o))
-FSA = 
+FSA = -fsanitize=address -g3
 
 
 all : $(NAME)

@@ -6,7 +6,7 @@
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 01:42:38 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/10 02:52:27 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/11 05:30:17 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,15 @@ void	ft_smallsort(t_pushswap *data, int count)
 {
     if(!ft_checksort(data))
         ft_error_all(data, 3);
-    if (count == 2)
-        ft_swap(data, 'a');
-    if (count == 3)   
-        ft_sort_three(data);
     if (count <= 5)
-        ft_sort_five(data, count);
+    {
+        if (count == 2)
+            ft_swap(data, 'a');
+        else if (count == 3)
+            ft_sort_three(data);
+        else
+            ft_sort_five(data, count);
+        ft_error_all(data, 3);
+    }
+    
 }

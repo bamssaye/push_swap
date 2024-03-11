@@ -6,7 +6,7 @@
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 02:54:10 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/11 01:15:04 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/11 07:31:15 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,42 @@ void ft_setup_po(t_pushswap *data)
         i++; 
     }
 }
+void push_to_stack_a(t_pushswap *data)
+{
+    int     i;
+    int     count;
+    //int     tmp;
+   // int     tmp1;
+    
+    i = 0;
+    count = 3;
+    (void)data;
+    while (i < count)
+    {
+        //ft_setup_init(data);
+        //tmp = (data->stack_b_lenght - data->stack_b_index_max) + 1;
+        //tmp1 = data->stack_b_index_max;
+        //printf("%d", data->stack_b_index_max);
+        //sleep(1);
+        // if (data->stack_b_index_max == 0)
+        // {
+        //     ft_push_a(data);
+        //     i++;
+        // }  
+        // else
+        // {
+        //     // if (data->stack_b_index_max > data->stack_b_middle)
+        //     //     while (--tmp)
+        //     //         ft_reverse_rotate(data, 'b');
+        //     // else
+        //     //     while (--tmp1)
+        //     //         ft_rotate(data, 'b');
+        //     i++;
+        // }
+        i++;
+    }
+        
+}
 
 void ft_algo(t_pushswap *data, int op)
 {
@@ -95,13 +131,12 @@ void ft_algo(t_pushswap *data, int op)
         {
             ft_rotate(data , 'a');
             ft_rotatr_2(data);
-            // printf("=== %d %d\n", data->stack_po[0][0], data->stack_po[0][1]);
         }
-        //printf("%d %d", data->stack_po[0][0], data->stack_po[0][1]);
     }
-    i = -1;
-    while (++i < count)
-        ft_push_a(data);
+   // push_to_stack_a(data);
+    // i = -1;
+    // while (++i < count)
+    //     ft_push_a(data);
     // printf("%d %d", data->stack_a_lenght, data->stack_b_lenght);
 }
 void	ft_bigsort(t_pushswap *data)

@@ -38,4 +38,6 @@ y = (15 / 400) * data->size_arr + (15 - 15 / 4)
 
 
 
--fsanitize=address -g3
+9lb 3ala akbr wahd
+check wher in stack stack_
+heta iwesl le fo9

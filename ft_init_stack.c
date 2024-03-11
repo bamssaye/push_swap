@@ -6,7 +6,7 @@
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 02:03:29 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/10 02:24:32 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/11 06:51:39 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,22 @@ int ft_checksort(t_pushswap *data)
     return (0);
 }
 
-void    ft_find_middle(t_pushswap *data)
+void    ft_find_middle(t_pushswap *data, int flag)
 {
-    if (data->stack_a_lenght % 2 == 0)
-        data->stack_a_middle = data->stack_a_lenght / 2;
+    if (flag == 'a')
+    {
+        if (data->stack_a_lenght % 2 == 0)
+            data->stack_a_middle = data->stack_a_lenght / 2;
+        else
+            data->stack_a_middle = (data->stack_a_lenght / 2) + 1;
+    }
     else
-        data->stack_a_middle = (data->stack_a_lenght / 2) + 1;
+    {
+        if (data->stack_b_lenght % 2 == 0)
+            data->stack_b_middle = data->stack_b_lenght / 2;
+        else
+            data->stack_b_middle = (data->stack_b_lenght / 2) + 1;
+    }
 }
 
 void ft_init(t_pushswap *data, char **av)
@@ -61,5 +71,6 @@ void ft_setup_init(t_pushswap *data)
 	data->stack_b_max = ft_find_max(data, 'b');
 	data->stack_b_index_min = ft_find_idex_min(data, 'b');
 	data->stack_b_index_max = ft_find_idex_max(data, 'b');
-    ft_find_middle(data);
+    ft_find_middle(data, 'a');
+    ft_find_middle(data, 'b');
 }

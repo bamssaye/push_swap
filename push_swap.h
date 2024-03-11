@@ -6,7 +6,7 @@
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 06:01:27 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/11 01:16:12 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/11 06:50:43 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int     ft_find_max(t_pushswap *data, int c);
 int     ft_find_min(t_pushswap *data, int c);
 int     ft_find_idex_max(t_pushswap *data, int c);
 int     ft_find_idex_min(t_pushswap *data, int c);
-void    ft_find_middle(t_pushswap *data);
+void    ft_find_middle(t_pushswap *data, int flag);
 
 // sort algorth
 void	ft_bigsort(t_pushswap *data);
