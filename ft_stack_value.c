@@ -6,7 +6,7 @@
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 17:23:58 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/11 05:35:30 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/12 02:26:10 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ int ft_find_min(t_pushswap *data, int c)
     }
     return (min);
 }
+
 int ft_find_idex_max(t_pushswap *data, int c)
 {
     int i;
@@ -78,7 +79,7 @@ int ft_find_idex_max(t_pushswap *data, int c)
         max_idex = ft_find_max(data, 'a');
         while (++i < data->stack_a_lenght)
             if (data->stack_a[i] == max_idex)
-                max_idex = i;
+                break;
     }
     else
     {
@@ -87,9 +88,9 @@ int ft_find_idex_max(t_pushswap *data, int c)
         max_idex = ft_find_max(data, 'b');
         while (++i < data->stack_b_lenght)
             if (data->stack_b[i] == max_idex)
-                max_idex = i;
+                break;
     }
-    return (max_idex);
+    return (i);
 }
 
 int ft_find_idex_min(t_pushswap *data, int c)

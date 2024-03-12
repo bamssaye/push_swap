@@ -6,7 +6,7 @@
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 02:03:29 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/11 06:51:39 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/12 02:26:29 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ void ft_init(t_pushswap *data, char **av)
     data->tmp = NULL;
     data->count_oper = 0;
     data->stack_b_lenght = 0;
+    data->first_len = 0;
+    data->stack_po = 0;
     data->split = NULL;
     count = ft_count_a(data,av);
     data->stack_a_lenght = count;

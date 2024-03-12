@@ -6,7 +6,7 @@
 #    By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/28 16:29:29 by bamssaye          #+#    #+#              #
-#    Updated: 2024/03/11 04:54:48 by bamssaye         ###   ########.fr        #
+#    Updated: 2024/03/12 02:45:11 by bamssaye         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ FUN = ft_check_input.c ft_checkdup.c\
 	ft_split.c ft_stack_value.c\
 	libft_utlis.c ft_small_sort.c\
 	ft_operation.c ft_big_sort.c\
+	ft_big_sort_utils.c ft_operation_full.c\
 	main.c get_next_line.c
 AR = ar -rc
 RM = rm -rf

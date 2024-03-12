@@ -6,7 +6,7 @@
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 06:01:27 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/11 06:50:43 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/12 02:44:30 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct a_pushswap
 	char	*str;
 	int		*tmp;
 	char	**argv;
+	int		first_len;
 	int		count_oper;
 	int		stack_a_lenght;
 	int		stack_a_min;
@@ -50,7 +51,7 @@ void	ft_checkdup(t_pushswap *data);
 int		ft_checksort(t_pushswap *data);
 
 ///clean stack
-void    ft_sfree_po(int **stack_po);
+void    ft_sfree_po(int **stack_po, int count);
 void	ft_freespac(char **str);
 void	ft_error_all(t_pushswap *data, int c);
 
@@ -63,8 +64,11 @@ int     ft_find_idex_min(t_pushswap *data, int c);
 void    ft_find_middle(t_pushswap *data, int flag);
 
 // sort algorth
-void	ft_bigsort(t_pushswap *data);
 void	ft_smallsort(t_pushswap *data,int count);
+void	ft_bigsort(t_pushswap *data);
+void	ft_setup_po(t_pushswap *data);
+void	ft_sort_list(t_pushswap *data);
+void	ft_algo(t_pushswap *data, int op);
 
 // operation
 void    ft_push_a(t_pushswap *data);
@@ -72,6 +76,10 @@ void	ft_push_b(t_pushswap *data);
 void    ft_swap(t_pushswap *data, int flag);
 void    ft_rotate(t_pushswap *data, int flag);
 void    ft_reverse_rotate(t_pushswap *data, int flag);
+void    ft_reverse_rotate_all(t_pushswap *data);
+void    ft_rotate_all(t_pushswap *data);
+void    ft_swap_all(t_pushswap *data);
+
 
 //    UTILS/LIBFT_UTILS
 int		ft_isdigit(int c);

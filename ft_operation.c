@@ -6,7 +6,7 @@
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 03:55:37 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/11 01:15:54 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/12 02:34:48 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void    ft_push_a(t_pushswap *data)
     int tmp;
     
     i = -1;
-    // if (data->stack_b_lenght == 0)
-    //     return;
     tmp = data->stack_b[0];
     while (++i < data->stack_b_lenght)
         data->stack_b[i] = data->stack_b[i + 1];
@@ -34,18 +32,7 @@ void    ft_push_a(t_pushswap *data)
     data->stack_a_lenght++;
     write(1, "pa\n", 3);
 }
-void ft_remove_2(t_pushswap *data)
-{
-    int i;
-    
-    i = -1;
-    while (++i < data->stack_a_lenght)
-    {
-        data->stack_po[i][0] =  data->stack_po[i + 1][0];
-        data->stack_po[i][1] = data->stack_po[i + 1][1];
-    }
-        
-}
+
 void ft_push_b(t_pushswap *data)
 {
     int i;
@@ -86,23 +73,6 @@ void    ft_swap(t_pushswap *data, int flag)
         data->stack_b[i] = data->stack_b[i + 1];
         data->stack_b[i + 1] = tmp;
         write(1, "sb\n", 3);
-    }
-}
-
-void ft_rotatr_2(t_pushswap *data)
-{
-    int tmp[2][2];
-    int i;
-    
-    i = -1;
-    while (++i < data->stack_a_lenght - 1)
-    {
-        tmp[0][0] = data->stack_po[i][0];
-        tmp[0][1] = data->stack_po[i][1];
-        data->stack_po[i][0] =  data->stack_po[i + 1][0];
-        data->stack_po[i][1] = data->stack_po[i + 1][1];
-        data->stack_po[i + 1][0] = tmp[0][0];
-        data->stack_po[i + 1][1] = tmp[0][1];
     }
 }
 

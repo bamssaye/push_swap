@@ -1,34 +1,33 @@
 #include <stdio.h>
 #include <stdlib.h>
-void p(int **spl)
+
+
+
+int ft_find_idex_max(t_pushswap *data, int c)
 {
+    int i;
+    int max_idex;
 
-    spl[0][0] = 6;
-    spl[0][1] = 0;
-    spl[0][2] = 1;
-    spl[1][0] = 5;
-    spl[1][1] = 5;
-    spl[1][2] = 5;
-    //spl[1][0] = 5;
-    //printf("a = %d, ai = %d, bi = %d", spl[0][0],spl[0][1],spl[0][2]);
-
-}
-void	ft_freespac(int **str)
-{
-	// int	i;
-
-	// i = 0;
-    // if (str == NULL)
-    //     return;
-    // // while (i < 3)
-    // // {
-        free(str[0]);
-        free(str[1]);
-        free(str[2]);
-    //     i++;
-    // }
-        
-    free(str);
+    i = -1;
+    if (c == 'a')
+    {
+        if (data->stack_a_lenght < 2)
+            return (0);
+        max_idex = ft_find_max(data, 'a');
+        while (++i < data->stack_a_lenght)
+            if (data->stack_a[i] == max_idex)
+                max_idex = i;
+    }
+    else
+    {
+        if (data->stack_b_lenght < 2)
+            return (0);
+        max_idex = ft_find_max(data, 'b');
+        while (++i < data->stack_b_lenght)
+            if (data->stack_b[i] == max_idex)
+                max_idex = i;
+    }
+    return (max_idex);
 }
 int main()
 {
