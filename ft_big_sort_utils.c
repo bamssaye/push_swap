@@ -6,7 +6,7 @@
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 02:31:50 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/12 02:42:08 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/12 20:11:38 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,21 @@ void push_to_stack_a(t_pushswap *data)
             break;
     }  
 }
+// int ft_findindex(t_pushswap *data, int op)
+// {
+//     int i;
 
+//     i = 0;
+//     while (i < data->first_len)
+//     {
+//         if (data->stack_po[0][0] <= i)
+//             return (i);
+//         else if (data->stack_po[0][0] <= i + op)
+//             return (i);
+//         i++;
+//     }
+//     return (i);
+// }
 void ft_algo(t_pushswap *data, int op)
 {
     int i;
@@ -117,8 +131,17 @@ void ft_algo(t_pushswap *data, int op)
         }
         else
         {
-            ft_rotate(data , 'a');
-            ft_rotatr_2(data);
+            // if(ft_findindex(data, op) > data->first_len / 2)
+            // {
+                ft_rotate(data , 'a');
+                ft_rotatr_2(data);
+            // }
+            // else
+            // {
+            //      ft_reverse_rotate(data , 'a');
+            //     ft_rotatr_2(data);
+            // }
+            
         }
     }
     push_to_stack_a(data);

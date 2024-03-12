@@ -34,7 +34,7 @@ array = ft_fill_aray(stack_a);
     free(array);
 
  
-y = (15 / 400) * data->size_arr + (15 - 15 / 4)
+
 
 
 
