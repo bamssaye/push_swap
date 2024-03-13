@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_operation_full.c                                :+:      :+:    :+:   */
+/*   main_b.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bamssaye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/12 02:34:08 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/12 23:33:15 by bamssaye         ###   ########.fr       */
+/*   Created: 2024/03/12 23:44:10 by bamssaye          #+#    #+#             */
+/*   Updated: 2024/03/13 00:17:01 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
-void    ft_swap_all(t_pushswap *data)
+int main(int ac, char **av)
 {
-    ft_swap(data, 'a');
-    ft_swap(data, 'b');
-    write(1, "ss\n", 3);
-}
-
-void    ft_rotate_all(t_pushswap *data)
-{
-    ft_rotate(data, 'a');
-    ft_rotate(data, 'b');
-    write(1, "rr\n", 3);
-}
-
-void    ft_reverse_rotate_all(t_pushswap *data)
-{
-    ft_reverse_rotate(data, 'a');
-    ft_reverse_rotate(data, 'b');
-    write(1, "rrr\n", 4);
+    t_pushswap  *checker;
+    char        *line;
+    if(ac > 1)
+    {
+        checker = malloc(sizeof(t_pushswap));
+        ft_init(checker, av);
+        line = get_next_line(0);
+        
+    }
+    return (0);
 }

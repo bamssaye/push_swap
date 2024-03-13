@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+         #
+#    By: bamssaye <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/28 16:29:29 by bamssaye          #+#    #+#              #
-#    Updated: 2024/03/12 19:45:07 by bamssaye         ###   ########.fr        #
+#    Updated: 2024/03/12 23:42:13 by bamssaye         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ FUN = ft_check_input.c ft_checkdup.c\
 	libft_utlis.c ft_small_sort.c\
 	ft_operation.c ft_big_sort.c\
 	ft_big_sort_utils.c ft_operation_full.c\
+	ft_big_sort_other_utils.c\
 	main.c get_next_line.c
 AR = ar -rc
 RM = rm -rf

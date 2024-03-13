@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bamssaye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 05:14:06 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/11 05:17:05 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/12 23:27:40 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ int main(int ac, char **av)
         data = malloc(sizeof(t_pushswap));
         ft_init(data, av);
         ft_bigsort(data);
+        int i = 0;
+        while (i < data->first_len)
+            printf("%d ", data->stack_a[i++]);
         ft_error_all(data, 3);
     }
 }

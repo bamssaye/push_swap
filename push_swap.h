@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bamssaye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 06:01:27 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/12 02:44:30 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/12 23:47:14 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#	define BUFFER_SIZE 42
 
 typedef struct a_pushswap
 {
@@ -69,6 +68,9 @@ void	ft_bigsort(t_pushswap *data);
 void	ft_setup_po(t_pushswap *data);
 void	ft_sort_list(t_pushswap *data);
 void	ft_algo(t_pushswap *data, int op);
+void	pushall_to_stack_a(t_pushswap *data);
+int		ft_findindex(t_pushswap *data, int op);
+
 
 // operation
 void    ft_push_a(t_pushswap *data);
@@ -91,6 +93,8 @@ void	*ft_calloc(size_t nmemb, size_t size);
 char	*get_next_line(int fd);
 void	ft_rotatr_2(t_pushswap *data);
 void	ft_remove_2(t_pushswap *data);
+void	ft_rrotate_2(t_pushswap *data);
+
 
 
 

@@ -41,3 +41,13 @@ array = ft_fill_aray(stack_a);
 9lb 3ala akbr wahd
 check wher in stack stack_
 heta iwesl le fo9
+
+
+
+brew update
+brew install g++
+brew install clang
+brew install libgl1-mesa-dev libglu1-mesa-dev
+brew install libx11-dev libxrandr-dev
+brew install libudev-dev
+brew install libfreetype-dev
