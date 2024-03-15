@@ -6,7 +6,7 @@
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 03:55:37 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/15 01:18:40 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/15 07:30:34 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void    ft_push_a(t_pushswap *data, int c)
     if (data->stack_b_lenght == 0)
         return;
     tmp = data->stack_b[0];
-    while (++i < data->stack_b_lenght)
+    while (++i < data->stack_b_lenght - 1)
         data->stack_b[i] = data->stack_b[i + 1];
     data->stack_b_lenght--;
     i = data->stack_a_lenght;
@@ -45,7 +45,7 @@ void ft_push_b(t_pushswap *data, int c)
     if (data->stack_a_lenght == 0)
         return ;
     tmp = data->stack_a[0];
-    while (++i < data->stack_a_lenght)
+    while (++i < data->stack_a_lenght - 1)
         data->stack_a[i] = data->stack_a[i + 1];
     data->stack_a_lenght--;
     i = data->stack_b_lenght;
@@ -59,7 +59,7 @@ void ft_push_b(t_pushswap *data, int c)
     if (c == 1)
         write(1, "pb\n", 3);
 }
-
+// 3 1 2 0  /// 0 3 1 2- 3 1 2- 1 2 3  
 void    ft_swap(t_pushswap *data, int flag, int c)
 {
     int tmp;

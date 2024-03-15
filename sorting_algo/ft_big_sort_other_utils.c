@@ -6,7 +6,7 @@
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 23:32:10 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/15 01:19:30 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/15 07:08:17 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,11 @@ int ft_findindex(t_pushswap *data, int op, int x)
     int i;
 
     i = 0;
-    while (i < data->first_len)
+    while (i < data->stack_a_lenght)
     {
-        if (data->stack_po[0][0] <= x)
+        if (data->stack_po[i][0] <= x)
             return (i);
-        else if (data->stack_po[0][0] <= x + op)
+        else if (data->stack_po[i][0] <= x + op)
             return (i);
         i++;
     }

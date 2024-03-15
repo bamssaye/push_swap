@@ -6,7 +6,7 @@
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 02:31:50 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/15 01:19:35 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/15 06:31:36 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void ft_setup_po(t_pushswap *data)
 
 static void ft_norminette(t_pushswap *data, int op, int i)
 {
-    if(ft_findindex(data, op, i) <= data->stack_a_lenght / 2)
+    if(ft_findindex(data, op, i) >= data->stack_a_lenght / 2)
     {
         ft_reverse_rotate(data , 'a', data->c);
         ft_rrotate_2(data);

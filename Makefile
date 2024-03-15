@@ -6,7 +6,7 @@
 #    By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/28 16:29:29 by bamssaye          #+#    #+#              #
-#    Updated: 2024/03/15 03:09:20 by bamssaye         ###   ########.fr        #
+#    Updated: 2024/03/15 06:57:24 by bamssaye         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar -rc
 RM = rm -rf
-FSA = -fsanitize=address
+FSA = 
 SRC_DIRS = parsing utils sorting_algo operation
 
 UTILS = parsing/ft_check_input.c parsing/ft_checkdup.c\
@@ -69,7 +69,7 @@ $(NAME) : $(OBG)
 bonus : $(NAME_BONUS)
 
 $(NAME_BONUS) :  $(OBJ_B)
-	@$(CC) $(FSA) $(OBJ_B) -o $(NAME_BONUS)
+	@$(CC)  $(OBJ_B) $(FSA) -o $(NAME_BONUS)
 	@echo "Make Bonus"
 
 clean :

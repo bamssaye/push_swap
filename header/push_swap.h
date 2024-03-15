@@ -6,7 +6,7 @@
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 06:01:27 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/15 01:16:57 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/15 05:56:47 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-#	define BUFFER_SIZE 42
 
 typedef struct a_pushswap
 {
@@ -27,6 +26,7 @@ typedef struct a_pushswap
 	char	*str;
 	int		*tmp;
 	char	**argv;
+	char	*line;
 	int		c;
 	int		first_len;
 	int		count_oper;

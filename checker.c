@@ -6,7 +6,7 @@
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 23:44:10 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/15 02:58:18 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/15 08:32:38 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,26 @@
 
 int main(int ac, char **av)
 {
-    t_pushswap  *checker;
-    char        *line;
+    t_pushswap  *data;
     
     if(ac > 1)
     {
-        checker = malloc(sizeof(t_pushswap));
-        checker->c = 0;
-        ft_init(checker, av);
-        line = get_next_line(0);
-        while(line)
+        data = malloc(sizeof(t_pushswap));
+        data->c = 0;
+        ft_init(data, av);
+        data->line = get_next_line(0);
+        while(data->line)
         {   
-            ft_checkinput(checker, line);
-            free(line);
-            line = get_next_line(0);
+            ft_checkinput(data, data->line);
+            free(data->line);
+            data->line = get_next_line(0);
         }
-        free(line);
-        if (!ft_checksort(checker) && !checker->stack_b_lenght)
+        free(data->line);
+        if (!ft_checksort(data) && !data->stack_b_lenght)
             write(1, "OK\n", 3);
         else
             write(1, "KO\n", 3);
-        ft_errorss(checker, 0);
+        ft_errorss(data, 0);
     }
     return (0);
 }

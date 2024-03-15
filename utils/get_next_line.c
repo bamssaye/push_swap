@@ -6,7 +6,7 @@
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 08:05:17 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/15 01:20:18 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/15 08:36:14 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,17 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	getline = ft_calloc(5, sizeof(char));
+	getline = ft_calloc(BUFFER_SIZE, sizeof(char));
 	if (!getline)
 		return (NULL);
 	if (!buffer)
-		buffer = ft_calloc(6, sizeof(char));
+		buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
 	while (1)
 	{
 		getline = ft_strjoin(getline, buffer);
 		if (ft_getline(getline, buffer))
 			return (getline);
-		bytes = read(fd, buffer, 6);
+		bytes = read(fd, buffer, BUFFER_SIZE);
 		if (bytes <= 0)
 			return (ft_free(getline, &buffer));
 		buffer[bytes] = '\0';
