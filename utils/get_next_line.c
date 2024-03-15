@@ -12,10 +12,8 @@
 
 #include "../header/push_swap_bonus.h"
 
-
 static int	ft_getline(char *getline, char *buffer);
 static char	*ft_free(char *getline, char **buffer);
-
 
 char	*get_next_line(int fd)
 {

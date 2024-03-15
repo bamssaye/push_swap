@@ -10,14 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef PUSH_SWAP_BONUS_H
+#ifndef PUSH_SWAP_BONUS_H
 # define PUSH_SWAP_BONUS_H
 
-#include "push_swap.h"
+# include "push_swap.h"
 
-#	define BUFFER_SIZE 4
+# define BUFFER_SIZE 4
 
-void ft_checkinput(t_pushswap *data, char *in);
+void	ft_checkinput(t_pushswap *data, char *in);
 
-
-# endif
+#endif

@@ -12,18 +12,17 @@
 
 #include "header/push_swap.h"
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-    t_pushswap *data;
-    
-    if (ac > 1)
-    {
-        data = malloc(sizeof(t_pushswap));
-        data->c = 1;
-        ft_init(data, av);
-        ft_smallsort(data);
-        ft_bigsort(data);
-        ft_error_all(data, 3);
-    }
-}
+	t_pushswap	*data;
 
+	if (ac > 1)
+	{
+		data = malloc(sizeof(t_pushswap));
+		data->c = 1;
+		ft_init(data, av);
+		ft_smallsort(data);
+		ft_bigsort(data);
+		ft_error_all(data, 3);
+	}
+}

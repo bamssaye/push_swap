@@ -6,7 +6,7 @@
 /*   By: bamssaye <bamssaye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 02:17:21 by bamssaye          #+#    #+#             */
-/*   Updated: 2024/03/15 01:20:29 by bamssaye         ###   ########.fr       */
+/*   Updated: 2024/03/15 08:59:41 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		return (NULL);
 	i = 0;
 	while (i < s)
-		((unsigned char*)p)[i++] = 0;
-	return ((void*)p);
+		((unsigned char *)p)[i++] = 0;
+	return ((void *)p);
 }
 
 char	*ft_strjoin(char *s1, char *s2)
